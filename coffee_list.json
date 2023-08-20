@@ -1,0 +1,188 @@
+{
+  "coffees": [
+    {
+      "name": "マイルドカルディ",
+      "kinds": "ブレンド",
+      "bitternessLevel": 5,
+      "richnessLevel": 2,
+      "roastingDepth": 2.5,
+      "comment": "人気No.1!持続する甘い余韻"
+    },
+    {
+      "name": "スペシャルブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 7,
+      "richnessLevel": 3,
+      "roastingDepth": 2.5,
+      "comment": "しっかりとしたコクのバランスタイプ"
+    },
+    {
+      "name": "ブルーマウンテンブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 5,
+      "richnessLevel": 2,
+      "roastingDepth": 2.5,
+      "comment": "'ブルーマウンテン'の堂々たる品格"
+    },
+    {
+      "name": "モカブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 2,
+      "richnessLevel": 3,
+      "roastingDepth": 2.5,
+      "comment": "芳醇な香りと滑らかなコク"
+    },
+    {
+      "name": "プレミアムブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 5,
+      "richnessLevel": 3,
+      "roastingDepth": 4,
+      "comment": "上質を求めた、こだわりの逸品"
+    },
+    {
+      "name": "バードフレンドリー®︎ブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 5,
+      "richnessLevel": 2,
+      "roastingDepth": 2,
+      "comment": "バードフレンドリー®︎3種の贅沢なブレンド"
+    },
+    {
+      "name": "ウーマンズハンドフェアトレードブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 4,
+      "richnessLevel": 1,
+      "roastingDepth": 2,
+      "comment": "女性達の自立の懸け橋。やさしく繊細な味わい"
+    },
+    {
+      "name": "アメリカンブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 3.5,
+      "richnessLevel": 0,
+      "roastingDepth": 2.5,
+      "comment": "すっきりライトで飲みやすい"
+    },
+    {
+      "name": "カリビアマイルド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 5,
+      "richnessLevel": 1,
+      "roastingDepth": 2.5,
+      "comment": "カリブ諸国選りすぐりの豆をブレンド"
+    },
+    {
+      "name": "イタリアンロースト/アイスブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 10,
+      "richnessLevel": 2,
+      "roastingDepth": 6.5,
+      "comment": "KALDI定番のダークブレンド"
+    },
+    {
+      "name": "リッチブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 9,
+      "richnessLevel": 4,
+      "roastingDepth": 6.5,
+      "comment": "重厚感のある苦味と深いコク"
+    },
+    {
+      "name": "モーニングブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 8.5,
+      "richnessLevel": 2,
+      "roastingDepth": 5.5,
+      "comment": "目覚めの一杯にオススメのキレの良い苦み"
+    },
+    {
+      "name": "エスプレッソブレンド",
+      "kinds": "ブレンド",
+      "bitternessLevel": 9,
+      "richnessLevel": 4,
+      "roastingDepth": 5.5,
+      "comment": "苦味とキレに秘めた芳醇なアロマ"
+    },
+    {
+      "name": "グアテマラフレンチ",
+      "kinds": "ブレンド",
+      "bitternessLevel": 9,
+      "richnessLevel": 4,
+      "roastingDepth": 6,
+      "comment": "凝縮された果実味。個性的な味わい"
+    },
+    {
+      "name": "キリマンジャロ",
+      "kinds": "ストレート",
+      "bitternessLevel": 2.5,
+      "richnessLevel": 2,
+      "roastingDepth": 2,
+      "comment": "甘酸っぱい香りとキレのある酸味"
+    },
+    {
+      "name": "マンデリン",
+      "kinds": "ストレート",
+      "bitternessLevel": 8,
+      "richnessLevel": 3,
+      "roastingDepth": 3,
+      "comment": "野生的な香りと力強いボディ"
+    },
+    {
+      "name": "グアテマラ",
+      "kinds": "ストレート",
+      "bitternessLevel": 2.5,
+      "richnessLevel": 1,
+      "roastingDepth": 2,
+      "comment": "すっきりとした爽やかな酸味"
+    },
+    {
+      "name": "コロンビア",
+      "kinds": "ストレート",
+      "bitternessLevel": 3,
+      "richnessLevel": 4,
+      "roastingDepth": 2,
+      "comment": "しっかりとしたボディとコクのある酸味"
+    },
+    {
+      "name": "ブラジル",
+      "kinds": "ストレート",
+      "bitternessLevel": 5,
+      "richnessLevel": 2,
+      "roastingDepth": 3,
+      "comment": "やさしい甘さとしっかりとしたコク"
+    },
+    {
+      "name": "ツッカーノブルボン",
+      "kinds": "ストレート",
+      "bitternessLevel": 5,
+      "richnessLevel": 3,
+      "roastingDepth": 3,
+      "comment": "完熟ブルボン種を日陰干し。ふくよかな甘さ"
+    },
+    {
+      "name": "カナリオ",
+      "kinds": "ストレート",
+      "bitternessLevel": 4,
+      "richnessLevel": 1,
+      "roastingDepth": 3,
+      "comment": "黄色い実をつける「カナリオ種」の華やかな香り"
+    },
+    {
+      "name": "マンデリンフレンチ",
+      "kinds": "ストレート",
+      "bitternessLevel": 9.5,
+      "richnessLevel": 3,
+      "roastingDepth": 6,
+      "comment": "力強くシャープな苦みと深いコク"
+    },
+    {
+      "name": "モカフレンチ",
+      "kinds": "ストレート",
+      "bitternessLevel": 8,
+      "richnessLevel": 3,
+      "roastingDepth": 6,
+      "comment": "モカが香る、透明感のある苦味"
+    }
+  ]
+}
