@@ -9,5 +9,5 @@
     "sourceType": "module"
   },
   "rules": {},
-  "extends": ["standard", "prettier"]
+  "extends": ["eslint:recommended", "prettier"]
 }
