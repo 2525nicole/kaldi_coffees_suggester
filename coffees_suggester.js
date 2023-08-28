@@ -8,6 +8,7 @@ import {
   TasteClassification,
   BodyClassification,
 } from "./coffee_classification.js";
+import dedent from "dedent";
 
 const { prompt } = enquirer;
 prompt.on("cancel", () => {
@@ -19,33 +20,32 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 function suggestCoffees() {
-  console.log(
-    `カルディコーヒーファームで取り扱っている23種類のラインナップからあなたにぴったりのコーヒーを提案します;)
-まずはあなたのお好みを聞かせてください！\n`
-  );
+  console.log(dedent`
+    カルディコーヒーファームで取り扱っている23種類のラインナップからあなたにぴったりのコーヒーを提案します;)
+    まずはあなたのお好みを聞かせてください！\n`);
 
   async function displaySuggestion() {
     try {
       const suggestedCoffees = await decideSuggestions();
 
-      console.log(
-        `\nあなたにぴったりなコーヒーは以下の${suggestedCoffees.length}つです。
-ぜひ試してみてくださいね:) 素敵なコーヒーライフを☕️\n`
-      );
+      console.log(dedent`
+        \nあなたにぴったりなコーヒーは以下の${suggestedCoffees.length}つです。
+        ぜひ試してみてくださいね:) 素敵なコーヒーライフを☕️\n`);
 
       suggestedCoffees.forEach(function (element) {
-        console.log(`
-  🐱${element.name}(${element.kinds})
-  【苦味】${element.bitternessLevel}  【コク】${element.richnessLevel}  【ロースト】${element.roastingDepth}
-  【コメント】${element.comment}`);
+        console.log(dedent`
+          🐱${element.name}(${element.kinds})
+          【苦味】${element.bitternessLevel}  【コク】${element.richnessLevel}  【ロースト】${element.roastingDepth}
+          【コメント】${element.comment}\n`);
       });
 
-      console.log(`\n🐈各項目の数値について🐈-------------------------------
-カルディコーヒーファームのCOFFEE GUIDEまたはコーヒーケースに記載の数値です。
-・【苦味】 10段階（0 ←酸味が強い | 苦味が強い→ 10）
-・【コク深さ】 4段階（0 ←すっきり | コク深い→ 10）
-・【ロースト】 7段階（0 ←浅煎り | 深煎り→ 7）
--------------------------------------------------------\n`);
+      console.log(dedent`
+        \n🐈各項目の数値について🐈-------------------------------
+        カルディコーヒーファームのCOFFEE GUIDEまたはコーヒーケースに記載の数値です。
+        ・【苦味】 10段階（0 ←酸味が強い | 苦味が強い→ 10）
+        ・【コク深さ】 4段階（0 ←すっきり | コク深い→ 10）
+        ・【ロースト】 7段階（0 ←浅煎り | 深煎り→ 7）
+        -------------------------------------------------------\n`);
     } catch (error) {
       console.log(error);
     }
