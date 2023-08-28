@@ -118,7 +118,7 @@ function suggestCoffees() {
             { name: "苦味が強い", value: "bitterTaste" },
             { name: "酸味と苦味のバランスが良い", value: "wellBalancedTaste" },
           ],
-          result(value) {
+          result() {
             preference.tasteResult = this.focused.value;
           },
         },
@@ -140,7 +140,7 @@ function suggestCoffees() {
               value: "mediumBody",
             },
           ],
-          result(value) {
+          result() {
             preference.bodyResult = this.focused.value;
           },
         },
