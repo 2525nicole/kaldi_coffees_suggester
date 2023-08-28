@@ -10,6 +10,11 @@ import {
 } from "./coffee_classification.js";
 
 const { prompt } = enquirer;
+prompt.on("cancel", () => {
+  console.log("\nまたの機会に是非お好みを聞かせてくださいね！よい1日を🐈");
+  process.exit();
+});
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
