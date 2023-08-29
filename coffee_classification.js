@@ -1,25 +1,26 @@
 export class TasteClassification {
   constructor(coffees) {
     this.coffees = coffees;
+    this.mediumValue = 5;
   }
 
   isAcidicTaste() {
     const acidicTaste = this.coffees.filter(
-      (coffee) => coffee.bitternessLevel <= 4,
+      (coffee) => coffee.bitternessLevel < this.mediumValue,
     );
     return acidicTaste;
   }
 
   isBitterTaste() {
     const bitterTaste = this.coffees.filter(
-      (coffee) => coffee.bitternessLevel >= 6,
+      (coffee) => coffee.bitternessLevel > this.mediumValue,
     );
     return bitterTaste;
   }
 
   isWellBalancedTaste() {
     const wellBalancedTaste = this.coffees.filter(
-      (coffee) => coffee.bitternessLevel === 5,
+      (coffee) => coffee.bitternessLevel === this.mediumValue,
     );
     return wellBalancedTaste;
   }

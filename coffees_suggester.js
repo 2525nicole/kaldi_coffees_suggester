@@ -33,12 +33,10 @@ async function displaySuggestion() {
     });
 
     suggestedCoffees.forEach(function (element) {
-      console.log(
-        dedent`
+      console.log(dedent`
         🐱${element.name}(${element.kinds})
         【苦味】${element.bitternessLevel}  【コク】${element.richnessLevel}  【ロースト】${element.roastingDepth}
-        【コメント】${element.comment}\n`,
-      );
+        【コメント】${element.comment}\n`);
     });
 
     console.log(dedent`
@@ -55,23 +53,21 @@ async function displaySuggestion() {
 
 async function decideSuggestions() {
   try {
+    const preference = await askForPreference();
+
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
-
-    const preference = await askForPreference();
 
     let allCoffees = await fs.readFile(`${__dirname}/coffee_list.json`, "utf8");
     allCoffees = JSON.parse(allCoffees);
     allCoffees = allCoffees.coffees;
 
     const tasteClassification = new TasteClassification(allCoffees);
-
     const tasteResult = narrowDownByTaste(preference, tasteClassification);
 
     const mediumValue = preference.tasteResult === "bitterTaste" ? 3 : 2;
 
     const bodyClassification = new BodyClassification(tasteResult, mediumValue);
-
     const suggestedCoffees = narrowDownByBody(preference, bodyClassification);
     return suggestedCoffees;
   } catch (error) {
