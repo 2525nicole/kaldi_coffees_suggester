@@ -5,21 +5,21 @@ export class TasteClassification {
 
   isAcidicTaste() {
     const acidicTaste = this.coffees.filter(
-      (coffee) => coffee.bitternessLevel <= 4
+      (coffee) => coffee.bitternessLevel <= 4,
     );
     return acidicTaste;
   }
 
   isBitterTaste() {
     const bitterTaste = this.coffees.filter(
-      (coffee) => coffee.bitternessLevel >= 6
+      (coffee) => coffee.bitternessLevel >= 6,
     );
     return bitterTaste;
   }
 
   isWellBalancedTaste() {
     const wellBalancedTaste = this.coffees.filter(
-      (coffee) => coffee.bitternessLevel === 5
+      (coffee) => coffee.bitternessLevel === 5,
     );
     return wellBalancedTaste;
   }
@@ -33,21 +33,21 @@ export class BodyClassification {
 
   isLightBody() {
     const lightBody = this.coffees.filter(
-      (coffee) => coffee.richnessLevel < this.mediumValue
+      (coffee) => coffee.richnessLevel < this.mediumValue,
     );
     return lightBody;
   }
 
   isFullBody() {
     const fullBody = this.coffees.filter(
-      (coffee) => coffee.richnessLevel > this.mediumValue
+      (coffee) => coffee.richnessLevel > this.mediumValue,
     );
     return fullBody;
   }
 
   isMediumBody() {
     const mediumBody = this.coffees.filter(
-      (coffee) => coffee.richnessLevel === this.mediumValue
+      (coffee) => coffee.richnessLevel === this.mediumValue,
     );
     return mediumBody;
   }
