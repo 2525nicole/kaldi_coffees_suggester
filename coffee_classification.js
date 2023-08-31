@@ -5,16 +5,12 @@ export class TasteClassification {
   }
 
   suggestByTaste(preference) {
-    try {
-      if (preference === "acidicTaste") {
-        return this.#acidicTasteCoffees();
-      } else if (preference === "bitterTaste") {
-        return this.#bitterTasteCoffees();
-      } else {
-        return this.#wellBalancedTasteCoffees();
-      }
-    } catch (error) {
-      console.log(error);
+    if (preference === "acidicTaste") {
+      return this.#acidicTasteCoffees();
+    } else if (preference === "bitterTaste") {
+      return this.#bitterTasteCoffees();
+    } else {
+      return this.#wellBalancedTasteCoffees();
     }
   }
 
@@ -47,16 +43,12 @@ export class BodyClassification {
   }
 
   suggestByBody(preference) {
-    try {
-      if (preference === "lightBody") {
-        return this.#lightBodyCoffees();
-      } else if (preference === "fullBody") {
-        return this.#fullBodyCoffees();
-      } else {
-        return this.#mediumBodyCoffees();
-      }
-    } catch (error) {
-      console.log(error);
+    if (preference === "lightBody") {
+      return this.#lightBodyCoffees();
+    } else if (preference === "fullBody") {
+      return this.#fullBodyCoffees();
+    } else {
+      return this.#mediumBodyCoffees();
     }
   }
 
