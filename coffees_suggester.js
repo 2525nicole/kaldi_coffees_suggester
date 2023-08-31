@@ -62,13 +62,20 @@ async function decideSuggestions() {
     allCoffees = JSON.parse(allCoffees);
     allCoffees = allCoffees.coffees;
 
-    const tasteClassification = new TasteClassification(allCoffees);
-    const tasteResult = narrowDownByTaste(preference, tasteClassification);
+    const medianTaste = 5;
+    const tasteClassification = new TasteClassification(
+      allCoffees,
+      medianTaste,
+    );
+    const tasteResult = tasteClassification.suggestByTaste(
+      preference.tasteResult,
+    );
 
-    const median = preference.tasteResult === "bitterTaste" ? 3 : 2;
-
-    const bodyClassification = new BodyClassification(tasteResult, median);
-    const suggestedCoffees = narrowDownByBody(preference, bodyClassification);
+    const medianBody = preference.tasteResult === "bitterTaste" ? 3 : 2;
+    const bodyClassification = new BodyClassification(tasteResult, medianBody);
+    const suggestedCoffees = bodyClassification.suggestByBody(
+      preference.bodyResult,
+    );
     return suggestedCoffees;
   } catch (error) {
     console.log(error);
@@ -122,34 +129,6 @@ async function askForPreference() {
       },
     ]);
     return preference;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-function narrowDownByTaste(preference, tasteClassification) {
-  try {
-    if (preference.tasteResult === "acidicTaste") {
-      return tasteClassification.acidicTasteCoffees();
-    } else if (preference.tasteResult === "bitterTaste") {
-      return tasteClassification.bitterTasteCoffees();
-    } else {
-      return tasteClassification.wellBalancedTasteCoffees();
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-function narrowDownByBody(preference, bodyClassification) {
-  try {
-    if (preference.bodyResult === "lightBody") {
-      return bodyClassification.lightBodyCoffees();
-    } else if (preference.bodyResult === "fullBody") {
-      return bodyClassification.fullBodyCoffees();
-    } else {
-      return bodyClassification.mediumBodyCoffees();
-    }
   } catch (error) {
     console.log(error);
   }

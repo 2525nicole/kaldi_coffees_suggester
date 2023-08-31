@@ -1,24 +1,38 @@
 export class TasteClassification {
-  constructor(coffees) {
+  constructor(coffees, median) {
     this.coffees = coffees;
-    this.median = 5;
+    this.median = median;
   }
 
-  acidicTasteCoffees() {
+  suggestByTaste(preference) {
+    try {
+      if (preference === "acidicTaste") {
+        return this.#acidicTasteCoffees();
+      } else if (preference === "bitterTaste") {
+        return this.#bitterTasteCoffees();
+      } else {
+        return this.#wellBalancedTasteCoffees();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  #acidicTasteCoffees() {
     const acidicTaste = this.coffees.filter(
       (coffee) => coffee.bitternessLevel < this.median,
     );
     return acidicTaste;
   }
 
-  bitterTasteCoffees() {
+  #bitterTasteCoffees() {
     const bitterTaste = this.coffees.filter(
       (coffee) => coffee.bitternessLevel > this.median,
     );
     return bitterTaste;
   }
 
-  wellBalancedTasteCoffees() {
+  #wellBalancedTasteCoffees() {
     const wellBalancedTaste = this.coffees.filter(
       (coffee) => coffee.bitternessLevel === this.median,
     );
@@ -32,21 +46,35 @@ export class BodyClassification {
     this.median = median;
   }
 
-  lightBodyCoffees() {
+  suggestByBody(preference) {
+    try {
+      if (preference === "lightBody") {
+        return this.#lightBodyCoffees();
+      } else if (preference === "fullBody") {
+        return this.#fullBodyCoffees();
+      } else {
+        return this.#mediumBodyCoffees();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  #lightBodyCoffees() {
     const lightBody = this.coffees.filter(
       (coffee) => coffee.richnessLevel < this.median,
     );
     return lightBody;
   }
 
-  fullBodyCoffees() {
+  #fullBodyCoffees() {
     const fullBody = this.coffees.filter(
       (coffee) => coffee.richnessLevel > this.median,
     );
     return fullBody;
   }
 
-  mediumBodyCoffees() {
+  #mediumBodyCoffees() {
     const mediumBody = this.coffees.filter(
       (coffee) => coffee.richnessLevel === this.median,
     );
