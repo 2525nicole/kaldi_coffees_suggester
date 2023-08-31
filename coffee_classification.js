@@ -1,54 +1,54 @@
 export class TasteClassification {
   constructor(coffees) {
     this.coffees = coffees;
-    this.mediumValue = 5;
+    this.median = 5;
   }
 
-  isAcidicTaste() {
+  acidicTasteCoffees() {
     const acidicTaste = this.coffees.filter(
-      (coffee) => coffee.bitternessLevel < this.mediumValue,
+      (coffee) => coffee.bitternessLevel < this.median,
     );
     return acidicTaste;
   }
 
-  isBitterTaste() {
+  bitterTasteCoffees() {
     const bitterTaste = this.coffees.filter(
-      (coffee) => coffee.bitternessLevel > this.mediumValue,
+      (coffee) => coffee.bitternessLevel > this.median,
     );
     return bitterTaste;
   }
 
-  isWellBalancedTaste() {
+  wellBalancedTasteCoffees() {
     const wellBalancedTaste = this.coffees.filter(
-      (coffee) => coffee.bitternessLevel === this.mediumValue,
+      (coffee) => coffee.bitternessLevel === this.median,
     );
     return wellBalancedTaste;
   }
 }
 
 export class BodyClassification {
-  constructor(coffees, mediumValue) {
+  constructor(coffees, median) {
     this.coffees = coffees;
-    this.mediumValue = mediumValue;
+    this.median = median;
   }
 
-  isLightBody() {
+  lightBodyCoffees() {
     const lightBody = this.coffees.filter(
-      (coffee) => coffee.richnessLevel < this.mediumValue,
+      (coffee) => coffee.richnessLevel < this.median,
     );
     return lightBody;
   }
 
-  isFullBody() {
+  fullBodyCoffees() {
     const fullBody = this.coffees.filter(
-      (coffee) => coffee.richnessLevel > this.mediumValue,
+      (coffee) => coffee.richnessLevel > this.median,
     );
     return fullBody;
   }
 
-  isMediumBody() {
+  mediumBodyCoffees() {
     const mediumBody = this.coffees.filter(
-      (coffee) => coffee.richnessLevel === this.mediumValue,
+      (coffee) => coffee.richnessLevel === this.median,
     );
     return mediumBody;
   }

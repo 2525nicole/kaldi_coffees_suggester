@@ -65,9 +65,9 @@ async function decideSuggestions() {
     const tasteClassification = new TasteClassification(allCoffees);
     const tasteResult = narrowDownByTaste(preference, tasteClassification);
 
-    const mediumValue = preference.tasteResult === "bitterTaste" ? 3 : 2;
+    const median = preference.tasteResult === "bitterTaste" ? 3 : 2;
 
-    const bodyClassification = new BodyClassification(tasteResult, mediumValue);
+    const bodyClassification = new BodyClassification(tasteResult, median);
     const suggestedCoffees = narrowDownByBody(preference, bodyClassification);
     return suggestedCoffees;
   } catch (error) {
@@ -130,11 +130,11 @@ async function askForPreference() {
 function narrowDownByTaste(preference, tasteClassification) {
   try {
     if (preference.tasteResult === "acidicTaste") {
-      return tasteClassification.isAcidicTaste();
+      return tasteClassification.acidicTasteCoffees();
     } else if (preference.tasteResult === "bitterTaste") {
-      return tasteClassification.isBitterTaste();
+      return tasteClassification.bitterTasteCoffees();
     } else {
-      return tasteClassification.isWellBalancedTaste();
+      return tasteClassification.wellBalancedTasteCoffees();
     }
   } catch (error) {
     console.log(error);
@@ -144,11 +144,11 @@ function narrowDownByTaste(preference, tasteClassification) {
 function narrowDownByBody(preference, bodyClassification) {
   try {
     if (preference.bodyResult === "lightBody") {
-      return bodyClassification.isLightBody();
+      return bodyClassification.lightBodyCoffees();
     } else if (preference.bodyResult === "fullBody") {
-      return bodyClassification.isFullBody();
+      return bodyClassification.fullBodyCoffees();
     } else {
-      return bodyClassification.isMediumBody();
+      return bodyClassification.mediumBodyCoffees();
     }
   } catch (error) {
     console.log(error);
