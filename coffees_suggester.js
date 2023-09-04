@@ -15,12 +15,12 @@ async function suggestCoffees() {
     カルディコーヒーファームで取り扱っている23種類のラインナップからあなたにぴったりのコーヒーを提案します;)
     まずはあなたのお好みを聞かせてください！\n`);
 
-  const preference = await askForPreference();
+  const preference = await askPreference();
   const suggestedCoffees = await decideSuggestions(preference);
   displaySuggestion(suggestedCoffees);
 }
 
-async function askForPreference() {
+async function askPreference() {
   const preference = {};
   const { prompt } = enquirer;
   prompt.on("cancel", () => {
