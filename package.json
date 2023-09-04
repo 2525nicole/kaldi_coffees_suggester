@@ -1,6 +1,6 @@
 {
   "name": "kaldi_coffees_suggester",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "We will suggest the perfect coffee for you from the lineup of 23 different coffees available at Kaldi Coffee Farm;)",
   "keywords": [
     "kaldi",
