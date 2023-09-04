@@ -4,6 +4,7 @@ import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 import enquirer from "enquirer";
+const { prompt } = enquirer;
 import {
   TasteClassification,
   BodyClassification,
@@ -21,13 +22,12 @@ async function suggestCoffees() {
 }
 
 async function askPreference() {
-  const preference = {};
-  const { prompt } = enquirer;
   prompt.on("cancel", () => {
     console.log("\nまたの機会に是非お好みを聞かせてくださいね！よい1日を🐈");
     process.exit();
   });
 
+  const preference = {};
   await prompt([
     {
       type: "select",
@@ -95,13 +95,13 @@ async function displaySuggestion(suggestedCoffees) {
       \nあなたにぴったりなコーヒーは以下の${suggestedCoffees.length}つです。
       ぜひ試してみてくださいね:) 素敵なコーヒーライフを☕️\n`);
 
-  suggestedCoffees.sort(function (a, b) {
+  suggestedCoffees.sort((a, b) => {
     if (a.bitternessLevel < b.bitternessLevel) return -1;
     if (a.bitternessLevel > b.bitternessLevel) return 1;
     return 0;
   });
 
-  suggestedCoffees.forEach(function (element) {
+  suggestedCoffees.forEach((element) => {
     console.log(dedent`
         🐱${element.name}(${element.kinds})
         【苦味】${element.bitternessLevel}  【コク】${element.richnessLevel}  【ロースト】${element.roastingDepth}
